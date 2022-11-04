@@ -35,6 +35,10 @@ entry.grid(row=0, column=0, columnspan=3, ipady=2, pady=2)
 def your_song():
     mixer.music.load((str(entry.get()))) #Read the input from the textbox 
     mixer.music.play()
+
+def play_csgo():
+    pg.mixer.music.load("CSGO.mp3")
+    pg.mixer.music.play()    
  
 
 """Buttons for the soundboard"""
@@ -43,6 +47,11 @@ def your_song():
 button_1 = tk.Button(master=screen, text='Play your own song', padx=45, 
                     pady=5, width=3, command = your_song)
 button_1.grid(row=1, column=1, pady=2)
+
+button_2 = tk.Button(master=screen, text='CSGO', padx=15,
+                     pady=5, width=3, command = play_csgo)
+button_2.grid(row=1, column=1, pady=2)
+
 root.mainloop()
 
 root.mainloop()
