@@ -40,18 +40,30 @@ def play_csgo():
     pg.mixer.music.load("CSGO.mp3")
     pg.mixer.music.play()    
  
+def play_hll():
+    pg.mixer.music.load("HLL.mp3") 
+    pg.mixer.music.play() 
+
+def stop():
+    pg.mixer.quit() #Function force quits PyGame mixer
+    pg.mixer.init() #Function initializes PyGame mixer
 
 """Buttons for the soundboard"""
 
-
 button_1 = tk.Button(master=screen, text='Play your own song', padx=45, 
                     pady=5, width=3, command = your_song)
-button_1.grid(row=1, column=1, pady=2)
+button_1.grid(row=1, column=0, pady=2)
 
 button_2 = tk.Button(master=screen, text='CSGO', padx=15,
                      pady=5, width=3, command = play_csgo)
 button_2.grid(row=1, column=1, pady=2)
 
-root.mainloop()
+button_3 = tk.Button(master=screen, text='HLL', padx=15,
+                     pady=5, width=3, command = play_hll)     
+button_3.grid(row=1, column=2, pady=2)
+
+button_4 = tk.Button(master=screen, text='STOP', padx=15,
+                     pady=5, width=3, command = stop)
+button_4.grid(row=2, column=0, pady=2)
 
 root.mainloop()
