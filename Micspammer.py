@@ -18,7 +18,7 @@ pg.mixer.init() #Initialize PyGame
 pg.mixer.pre_init(44100, 16, 2, 4096)  #freq etc. settings
 root = tk.Tk() #Initiliaze Tkinter
 
-root.title('Videogame Micspam') #Name of the window
+root.title('Videogame Soundboard') #Name of the window
 screen = tk.Frame(master=root, bg="Green", padx=5) #Background
 screen.pack() #Geometry manager for the widgets
 
@@ -42,7 +42,7 @@ def play_csgo():
  
 def play_hll():
     mixer.music.load("HLL.mp3") 
-    mixer.music.play(loops = 2) 
+    mixer.music.play(loops = 2) #Loops twice as a test case for stop function.
 
 def stop():
     mixer.quit() #Function force quits PyGame mixer
@@ -51,6 +51,10 @@ def stop():
 def play_dcs():
     pg.mixer.music.load("DCS.mp3")
     pg.mixer.music.play()    
+
+def play_ron():
+    pg.mixer.music.load("ready or not.mp3")
+    pg.mixer.music.play()
 
 """Buttons for the soundboard"""
 
@@ -74,4 +78,7 @@ button_5 = tk.Button(master=screen, text='DCS', padx=45,
                      pady=5, width=3, command = play_dcs)
 button_5.grid(row=2, column=1, pady=2)
 
+button_6 = tk.Button(master=screen, text='RoN', padx=15,
+                     pady=5, width=3, command = play_ron)
+button_6.grid(row=2, column=2, pady=2)
 root.mainloop()
