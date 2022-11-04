@@ -30,4 +30,19 @@ entry = tk.Entry(master=screen, borderwidth=3, width=10,
 textvariable = inputstring_var,  relief=SUNKEN)
 entry.grid(row=0, column=0, columnspan=3, ipady=2, pady=2)
 
+"""Button functions"""
+
+def your_song():
+    mixer.music.load((str(entry.get()))) #Read the input from the textbox 
+    mixer.music.play()
+ 
+
+"""Buttons for the soundboard"""
+
+
+button_1 = tk.Button(master=screen, text='Play your own song', padx=45, 
+                    pady=5, width=3, command = your_song)
+button_1.grid(row=1, column=1, pady=2)
+root.mainloop()
+
 root.mainloop()
